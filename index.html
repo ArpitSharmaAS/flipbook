@@ -151,7 +151,7 @@
 <script>
   function initializeFlipbook() {
     const flipbook = $(".flipbook");
-    const isMobile = window.innerWidth <= 768; // Mobile width threshold
+    const isMobile = window.innerWidth < 1068; // Mobile width threshold
 
     flipbook.turn({
       display: isMobile ? 'single' : 'double', // Single page for mobile, double for larger screens

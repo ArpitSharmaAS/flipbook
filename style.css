@@ -74,6 +74,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    body{
+        background-color: aqua;
+    }
     .flipbook {
       width: 100%; /* Adjust width for mobile screens */
       height: auto; /* Automatically scale height */
