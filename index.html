@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Pokemon Magazine</title>
+</head>
+
+<body>
+  <audio id="flipSound" src="page-flip.mp3" preload="auto"></audio>
+  <div class="flipbook">
+    <div class="hard">CLASS: 11th<small>~ [ MATH Solutions ]</small><img src="images/logo.png" class="logo" alt=""></div>
+    <!-- <div class="hard"></div> -->
+    <div>
+      <small>CLASS: 11th [ MATH Solutions👉]</small>
+      <small>Total Pages: 23</small>
+    </div>
+    <div>
+      <img src="images/image (1).jpg" alt="" />
+      <p>page: 1</p>
+    </div>
+    <div>
+      <img src="images/image (2).jpg" alt="" />
+      <p>page: 2</p>
+    </div>
+    <div>
+      <img src="images/image (3).jpg" alt="" />
+      <p>page: 3</p>
+    </div>
+    <div>
+      <img src="images/image (4).jpg" alt="" />
+      <p>page: 4</p>
+    </div>
+    <div>
+      <img src="images/image (5).jpg" alt="" />
+      <p>page: 5</p>
+    </div>
+    <div>
+      <img src="images/image (6).jpg" alt="" />
+      <p>page: 6</p>
+    </div>
+    <div>
+      <img src="images/image (7).jpg" alt="" />
+      <p>page: 7</p>
+    </div>
+    <div>
+      <img src="images/image (8).jpg" alt="" />
+      <p>page: 8</p>
+    </div>
+    <div>
+      <img src="images/image (9).jpg" alt="" />
+      <p>page: 9</p>
+    </div>
+    <div>
+      <img src="images/image (10).jpg" alt="" />
+      <p>page: 10</p>
+    </div>
+    <div>
+      <img src="images/image (11).jpg" alt="" />
+      <p>page: 11</p>
+    </div>
+    <div>
+      <img src="images/image (12).jpg" alt="" />
+      <p>page: 12</p>
+    </div>
+    <div>
+      <img src="images/image (13).jpg" alt="" />
+      <p>page: 13</p>
+    </div>
+    <div>
+      <img src="images/image (14).jpg" alt="" />
+      <p>page: 14</p>
+    </div>
+    <div>
+      <img src="images/image (15).jpg" alt="" />
+      <p>page: 15</p>
+    </div>
+    <div>
+      <img src="images/image (16).jpg" alt="" />
+      <p>page: 16</p>
+    </div>
+    <div>
+      <img src="images/image (17).jpg" alt="" />
+      <p>page: 17</p>
+    </div>
+    <div>
+      <img src="images/image (18).jpg" alt="" />
+      <p>page: 18</p>
+    </div>
+    <div>
+      <img src="images/image (19).jpg" alt="" />
+      <p>page: 19</p>
+    </div>
+    <div>
+      <img src="images/image (20).jpg" alt="" />
+      <p>page: 20</p>
+    </div>
+    <div>
+      <img src="images/image (21).jpg" alt="" />
+      <p>page: 21</p>
+    </div>
+    <div>
+      <img src="images/image (22).jpg" alt="" />
+      <p>page: 22</p>
+    </div>
+    <div>
+      <img src="images/image (23).jpg" alt="" />
+      <p>page: 23</p>
+    </div>
+    <!-- <div class="hard"></div> -->
+    <div class="hard">Thank You <small>~ HankTheTank</small></div>
+  </div>
+
+
+
+  <script src="jquery.js"></script>
+  <script src="turn.js"></script>
+  <!-- <script>
+    $(".flipbook").turn();
+  </script> -->
+
+<!-- <script>
+  $(".flipbook").turn({
+    display: 'single', // Enable single-page mode
+    width: 500,       // Width of the flipbook
+    height: 600,       // Height of the flipbook
+    autoCenter: true   // Center the flipbook in the viewport
+  });
+</script> -->
+
+<!-- 
+<script>
+  // Select the audio element
+  const flipSound = document.getElementById("flipSound");
+
+  // Initialize the flipbook
+  $(".flipbook").turn({
+    when: {
+      turned: function(event, page, view) {
+        // Play the sound on page turn
+        flipSound.currentTime = 0; // Rewind to the start
+        flipSound.play();
+      },
+    },
+  });
+</script> -->
+
+<!-- // mobile vew -->
+<script>
+  function initializeFlipbook() {
+    const flipbook = $(".flipbook");
+    const isMobile = window.innerWidth <= 768; // Mobile width threshold
+
+    flipbook.turn({
+      display: isMobile ? 'single' : 'double', // Single page for mobile, double for larger screens
+      width: isMobile ? 400 : 1000, // Standard width
+      height: 600, // Standard height
+      autoCenter: true // Center the flipbook
+    });
+  }
+
+  // Initialize flipbook on load
+  $(document).ready(() => {
+    initializeFlipbook();
+  });
+
+  // Reinitialize flipbook on window resize
+  $(window).resize(() => {
+    $(".flipbook").turn("destroy"); // Destroy current flipbook instance
+    initializeFlipbook(); // Reinitialize with updated settings
+  });
+</script>
+
+</body>
+
+</html>
