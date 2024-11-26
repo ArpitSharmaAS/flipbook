@@ -11,7 +11,12 @@
 <body>
   <audio id="flipSound" src="page-flip.mp3" preload="auto"></audio>
   <div class="flipbook">
-    <div class="hard">CLASS: 11th<small>~ [ MATH Solutions ]</small><img src="images/logo.png" class="logo" alt=""></div>
+    <div class="hard">
+      CLASS: 11th<small>~ [ MATH Solutions ]</small><img src="images/logo.png" class="logo" alt="">
+      <p style="font-size: larger; color: #ff7300;">touch corners to flip ➡</p>
+      <div style="width: 20px; height: 20px; background-color: rgb(255, 123, 0); border-radius: 20px 0 0 ; position: absolute; bottom: 0; right: 0;"></div>
+    </div>
+   
     <!-- <div class="hard"></div> -->
     <div>
       <small>CLASS: 11th [ MATH Solutions👉]</small>
@@ -20,96 +25,119 @@
     <div>
       <img src="images/image (1).jpg" alt="" />
       <p>page: 1</p>
+      <div class="touch" style="display: none;"></div>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (2).jpg" alt="" />
       <p>page: 2</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (3).jpg" alt="" />
       <p>page: 3</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (4).jpg" alt="" />
       <p>page: 4</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (5).jpg" alt="" />
       <p>page: 5</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (6).jpg" alt="" />
       <p>page: 6</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (7).jpg" alt="" />
       <p>page: 7</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (8).jpg" alt="" />
       <p>page: 8</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (9).jpg" alt="" />
       <p>page: 9</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (10).jpg" alt="" />
       <p>page: 10</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (11).jpg" alt="" />
       <p>page: 11</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (12).jpg" alt="" />
       <p>page: 12</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (13).jpg" alt="" />
       <p>page: 13</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (14).jpg" alt="" />
       <p>page: 14</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (15).jpg" alt="" />
       <p>page: 15</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (16).jpg" alt="" />
       <p>page: 16</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (17).jpg" alt="" />
       <p>page: 17</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (18).jpg" alt="" />
       <p>page: 18</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (19).jpg" alt="" />
       <p>page: 19</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (20).jpg" alt="" />
       <p>page: 20</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (21).jpg" alt="" />
       <p>page: 21</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (22).jpg" alt="" />
       <p>page: 22</p>
+      <div class="touch" style="display: none;"></div>
     </div>
     <div>
       <img src="images/image (23).jpg" alt="" />
       <p>page: 23</p>
+      <div class="touch" style="display: none;"></div>
     </div>
-    <!-- <div class="hard"></div> -->
     <div class="hard">Thank You <small>~ HankTheTank</small></div>
   </div>
 
@@ -120,15 +148,6 @@
   <!-- <script>
     $(".flipbook").turn();
   </script> -->
-
-<!-- <script>
-  $(".flipbook").turn({
-    display: 'single', // Enable single-page mode
-    width: 500,       // Width of the flipbook
-    height: 600,       // Height of the flipbook
-    autoCenter: true   // Center the flipbook in the viewport
-  });
-</script> -->
 
 <!-- 
 <script>
@@ -147,32 +166,39 @@
   });
 </script> -->
 
-<!-- // mobile vew -->
 <script>
-  function initializeFlipbook() {
-    const flipbook = $(".flipbook");
-    const isMobile = window.innerWidth < 1100; // Mobile width threshold
+function initializeFlipbook() {
+  const flipbook = $(".flipbook");
+  const viewportWidth = Math.min(window.innerWidth, screen.width); // Use the smaller of the two values
+  const isMobile = viewportWidth <= 768; // Mobile width threshold
 
-    flipbook.turn({
-      display: isMobile ? 'single' : 'double', // Single page for mobile, double for larger screens
-      width: isMobile ? 400 : 1000, // Standard width
-      height: 600, // Standard height
-      autoCenter: true // Center the flipbook
-    });
+  // Destroy flipbook if it already exists
+  if (flipbook.data("turn")) {
+    flipbook.turn("destroy");
   }
 
-  // Initialize flipbook on load
-  $(document).ready(() => {
-    initializeFlipbook();
+  // Initialize flipbook with the correct display mode
+  flipbook.turn({
+    display: isMobile ? "single" : "double", // Single page for mobile, double for larger screens
+    width: isMobile ? 400 : 1000, // Smaller width for mobile, larger for desktop
+    height: 600, // Height remains consistent
+    autoCenter: true // Center the flipbook
   });
 
-  // Reinitialize flipbook on window resize
-  $(window).resize(() => {
-    $(".flipbook").turn("destroy"); // Destroy current flipbook instance
-    initializeFlipbook(); // Reinitialize with updated settings
-  });
+  // Log viewport width for debugging
+  console.log("Viewport Width:", viewportWidth, "| isMobile:", isMobile);
+}
+
+// Initialize flipbook on page load
+$(document).ready(() => {
+  initializeFlipbook();
+});
+
+// Reinitialize flipbook on window resize
+$(window).resize(() => {
+  initializeFlipbook();
+});
 </script>
-
 </body>
 
 </html>

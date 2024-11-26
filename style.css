@@ -74,9 +74,16 @@ body {
 }
 
 @media (max-width: 768px) {
-    body{
-        background-color: aqua;
+    .touch{
+        display: block !important;
+        width: 20px; height: 20px; background-color: rgb(255, 123, 0); border-radius: 20px 0 2px 0; position: absolute; bottom: -1px; right: -1px;
     }
+
+    .touch::before{
+        content: "";
+        width: 20px; height: 20px; background-color: rgb(55, 0, 255); border-radius: 0 20px 0 3px; position: absolute;  left: -381px;
+    }
+    
     .flipbook {
       width: 100%; /* Adjust width for mobile screens */
       height: auto; /* Automatically scale height */
